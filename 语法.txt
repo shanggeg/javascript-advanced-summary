@@ -1,0 +1,44 @@
+1、JavaScript的七种内置类型：null，undefined，boolea，number，string，object，symbol（符号）。除对象外，都是基本类型。
+2、typeof null ===‘object’  null是基本类型中唯一的一个“假值”。
+3、JavaScript中的变量是没有类型的，只有值才有类型。
+ 对变量执行typeof操作时，得到的结果是该变量持有的值的类型
+4、undefined是值的一种。undeclared表示变量还没有被声明过。
+5、对数组声明后即可向其中加入值，不需要预先设定大小。
+     使用delete运算符可以将单元从数组中删除，但是，删除后，数组的length属性不会发生变化
+6、“稀疏”数组：有空白或空缺单元的数组。
+var a = [];
+a[0] = 1;
+a[2] = [3];
+a[1];    //undefined
+a.length;     //3
+7、数组也是对象，也可以包含字符串键值和属性（但不计算在数组长度内）。
+var a = [];
+a[0] = 1;
+a["foobar"] = 2;
+a.length;      //1
+a["foobar"];   //2
+a.foobar;       //2
+如果字符串键值能够被强制类型转换为十进制数字的话，它会被当做数字索引来处理。
+var a = [];
+a["13"] = 42;
+a.length;    //14
+8、数字值可以使用Number对象进行封装。
+tofixed（）方法可指定小数部分的显示位数，如果指定的小数部分的显示位数多于实际位数就用0补齐
+toPrecision（）方法用来指定有效数位的显示位数
+makeItRain（）方法实现十秒钟金钱雨动画效果
+Number.EPSION来比较两个数字是否相等（在指定的误差范围内）
+Number.isInteger（）方法用来检测一个值是否是整数
+Number.isSafeInteger（）方法用来检测一个值是否是安全的整数
+9、void运算符：void__没有返回值，因此返回结果是undefined。void并不改变表达式的结果，只是让表达式不返回值
+10、isNaN（）来判断一个值是否是NaN
+11、工具方法Object.is（）来判断两个值是否绝对相等
+12、简单值总是通过值复制的方式来赋值/传递。
+复合值——对象和函数，总是通过引用复制的方式来赋值/传递
+13、toString（） 非字符串强制转换为字符串
+如果对象有自己的toString（）方法，字符串化时就会调用该方法并使用其返回值。
+数组的默认toString（）方法经过了重新定义，将所有单元字符串化以后再用","连接起来。
+toString（）可以被显示调用，或者在需要字符串化时自动调用
+14、所有安全的JSON值都可以使用JSON.stringify（）字符串化。JSON.stringify（）不是强制类型转换。
+字符串、数字、布尔值和null的JSON.stringify（）规则与ToString基本相同。
+如果传递给JSON.stringify（）的对象中定义了toJSON（）方法，那么该方法会在字符串化前调用，以便将对象转换为安全的JSON值
+15、
